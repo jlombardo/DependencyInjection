@@ -2,7 +2,12 @@ package dependencyinjection.example1;
 
 import javax.swing.JOptionPane;
 
-// Retrieves input from a GUI
+/**
+ * This class serves as a delegate component that will perform input using a 
+ * stock GUI component from the javax.swing library.
+ * 
+ * @author The ByteShop.Net
+ */
 public class GuiMessageInput {
     
     public String getMessage() {
