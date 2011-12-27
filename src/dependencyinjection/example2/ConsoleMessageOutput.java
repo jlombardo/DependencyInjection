@@ -1,6 +1,13 @@
 package dependencyinjection.example2;
 
-// Produces output to the console
+/**
+ * This class serves as a delegate component that will perform console output.
+ * However it has been improved by basing its behavior on an abstraction -- 
+ * the MessageOutput interface. This means that any class that implements the 
+ * same interface will be interchangeable with this one. Better flexibility!
+ * 
+ * @author The ByteShop.Net
+ */
 public class ConsoleMessageOutput implements MessageOutput {
     
     @Override

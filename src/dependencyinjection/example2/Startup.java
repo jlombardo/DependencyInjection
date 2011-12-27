@@ -1,6 +1,15 @@
 package dependencyinjection.example2;
 
 
+/**
+ * This demo improves on example 1 by using abstractions (Interfaces) to
+ * represent the input and output components. Because the MessageService
+ * class relies only on those abstractions it is vastly more flexible and 
+ * portable. However, this startup class still has some hard dependencies 
+ * that will be removed in example 3.
+ * 
+ * @author The ByteShop.Net
+ */
 public class Startup {
 
     public static void main(String[] args) {
