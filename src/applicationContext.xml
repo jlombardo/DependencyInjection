@@ -25,9 +25,9 @@
         <property name="output" ref="messageOutput"/>
     </bean>
     
-    <bean id="messageInput" class="dependencyinjection.example4.RandomMessageProvider" scope="singleton"/>
+    <bean id="messageInput" class="dependencyinjection.example2.RandomMessageProvider" scope="singleton"/>
     
-    <bean id="messageOutput" class="dependencyinjection.example4.ConsoleMessageOutput" scope="singleton"/>
+    <bean id="messageOutput" class="dependencyinjection.example2.ConsoleMessageOutput" scope="singleton"/>
 
 
 </beans>

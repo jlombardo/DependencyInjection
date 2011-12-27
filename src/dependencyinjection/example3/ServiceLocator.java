@@ -1,19 +1,34 @@
 package dependencyinjection.example3;
 
+import dependencyinjection.example2.MessageInput;
+import dependencyinjection.example2.MessageOutput;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 
-// A Singleton that locates a service and returns it
+/**
+ * This class is an implementation of the ServiceLocator design pattern 
+ * which specifies a way to retrieve and inject the dependent 
+ * delegate components (for input and output in this case). The advantage of 
+ * this is the explicit hiding (encapsulation) of the details of how objects 
+ * are configured, realized and injected. Although the configuration info 
+ * can be stored anywhere, we chose a properties file on the classpath for 
+ * this example. Note that this class also follows the Singleton design 
+ * pattern, meaning that there will only be one instance of this class.
+ * 
+ * @author The ByteShop.Net
+ */
 public class ServiceLocator {
     private static ServiceLocator instance;
     private Properties props;
     
+    // Singleton implementation...
     private ServiceLocator() throws IOException {
         props = getProps();
     }
     
+    // Singleton implementation...
     public static ServiceLocator getInstance() throws IOException {
         if(instance == null) {
             instance = new ServiceLocator();

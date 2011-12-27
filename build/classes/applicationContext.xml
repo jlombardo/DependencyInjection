@@ -6,14 +6,28 @@
           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
 ">
     
-    <bean id="messageService" class="dependencyinjection.example4.MessageService">
+    <!--
+        This is the Spring configuration file using XML. Spring has other options
+        for configuring objects and injection. Here the "bean" tag is a reference
+        to a class of objects. The id is a way for one bean to refer to another, and
+        will be used in your code to retrieve a bean. Think of it as an alias. The
+        class attribute is important. It must be the fully-qualified name of the class.
+        And the scope attribute is set to singleton by default, or you can explicitly
+        set it. Singletons are single, global objects managed by Spring. You can also
+        change this to "prototype" and then Spring will give you a new instance on
+        every request. Their are other options for web applications.
+    -->
+    
+    
+    <!-- Here Spring will inject the input and output objects automatically -->
+    <bean id="messageService" class="dependencyinjection.example4.MessageService" scope="singleton">
         <property name="input" ref="messageInput"/>
         <property name="output" ref="messageOutput"/>
     </bean>
     
-    <bean id="messageInput" class="dependencyinjection.example4.RandomMessageProvider"/>
+    <bean id="messageInput" class="dependencyinjection.example2.RandomMessageProvider" scope="singleton"/>
     
-    <bean id="messageOutput" class="dependencyinjection.example4.ConsoleMessageOutput"/>
+    <bean id="messageOutput" class="dependencyinjection.example2.ConsoleMessageOutput" scope="singleton"/>
 
 
 </beans>
