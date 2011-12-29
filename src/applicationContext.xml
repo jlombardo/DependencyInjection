@@ -18,15 +18,21 @@
         every request. Their are other options for web applications.
     -->
     
-    
-    <!-- Here Spring will inject the input and output objects automatically -->
+    <!-- Spring will do two things:
+         1. Spring will instantiate all the objects (beans)
+         2. Then Spring will inject the input and output objects automatically. The "ref"
+            attribute of the bean tag indicates the id value of a dependent object.
+            Note that these objects are made available in your program code by 
+            call getBean("id_name") from the ApplicationContext object (see Startup) -->
     <bean id="messageService" class="dependencyinjection.example4.MessageService" scope="singleton">
         <property name="input" ref="messageInput"/>
         <property name="output" ref="messageOutput"/>
     </bean>
     
+    <!-- These are the dependent objects that Spring will inject into the above MessageService.
+         Try changing to different input/output classes to see how easy it is to reconfigure 
+         the behavior of this applicaiton -->
     <bean id="messageInput" class="dependencyinjection.example2.RandomMessageProvider" scope="singleton"/>
-    
     <bean id="messageOutput" class="dependencyinjection.example2.ConsoleMessageOutput" scope="singleton"/>
 
 

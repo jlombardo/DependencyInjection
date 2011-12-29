@@ -3,7 +3,6 @@ package dependencyinjection.example4;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-
 /**
  * This demo improves on example3 by removing the need for a Service Locator 
  * class. Instead we use the Spring Framework and its factory classes to

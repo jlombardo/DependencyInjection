@@ -1,7 +1,5 @@
 package dependencyinjection.example4;
 
-// A service that displays messages
-
 import dependencyinjection.example2.MessageInput;
 import dependencyinjection.example2.MessageOutput;
 
@@ -21,15 +19,17 @@ import dependencyinjection.example2.MessageOutput;
  */
 public class MessageService {
     
-    // Using abstractions (e.g., Interfaces) to represent dependent objects
-    // makes for more flexible code
+    // Once again we're representing out delegate components with abstractions,
+    // but this time the dependencies will be injected by Spring. No need
+    // for a Service Locator.
     private MessageInput input;
     private MessageOutput output;
     
+    // Spring creates the instance using the default constructor.
+    // Spring can also use custom constructors.
     public MessageService() {
         
     }
-    
     
     // This behavior encapsulates the work of the delegate components
     public void displayMessage() {
