@@ -19,12 +19,23 @@ public class Startup {
     public static void main(String[] args) {
         /*
          * Spring manages the lifecylce of configured objects. It is Spring
-         * that instantiates them and Spring that marks them for garbage
-         * collection. Access to these objects is via one of Spring's many 
-         * context classes.
+         * that instantiates and injects them and marks them. Access to these 
+         * objects is via one of Spring's many context classes. Notice that 
+         * ApplicationContext is a generic representation of these classes.
+         * Here, for simplicity, we'll use a ClassPathXmlApplicatonContext 
+         * which means the Spring configuration information is in an xml
+         * file embedded in the application on the classpath. Alternatively
+         * we could use a FileSystemXmlApplicationContext (see below) to
+         * locate the spring config file external to the application.
          */
         ApplicationContext ctx = 
              new ClassPathXmlApplicationContext("applicationContext.xml");
+        
+        // To store your config file external to the app use something like 
+        // this, where /conf/applicationContext.xml is relative to the root
+        // of the startup drive.
+//        ApplicationContext ctx =
+//             new FileSystemXmlApplicationContext("/conf/applicationContext.xml");
         
         /*
          * Once you have a Sring context you can use it to retrieve any 
