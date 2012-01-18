@@ -17,6 +17,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Startup {
 
     public static void main(String[] args) {
+        //<editor-fold>
         /*
          * Spring manages the lifecylce of configured objects. It is Spring
          * that instantiates and injects them and marks them. Access to these 
@@ -28,6 +29,7 @@ public class Startup {
          * we could use a FileSystemXmlApplicationContext (see below) to
          * locate the spring config file external to the application.
          */
+        //</editor-fold>
         ApplicationContext ctx = 
              new ClassPathXmlApplicationContext("applicationContext.xml");
         
